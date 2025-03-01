@@ -156,11 +156,13 @@ for i in range(3,27,2):
     train_scores_knn.append(knnc.score(train_data, train_target))
     test_scores_knn.append(knnc.score(test_data, test_target))
     
-print(train_scores_knn)    
+print("Train Scores:",train_scores_knn)
+print("Test Scores:",test_scores_knn)
+
 round_train_scores_knn = [round(num,2) for num in train_scores_knn]
-print("Train scores:",round_train_scores_knn)
+print("Train scores (Rounded):",round_train_scores_knn)
 round_test_scores_knn = [round(num,2) for num in test_scores_knn]
-print("Test scores :",round_test_scores_knn)
+print("Test scores (Rounded):",round_test_scores_knn)
 
 # Visualizations for Both Training and Testing Data
 plt.figure(figsize=(10,6))
@@ -190,10 +192,10 @@ for i in range(3,27,2):
     y_pred_knn = knn.predict(X_test)
     error_rate_knn.append(np.mean(y_pred_knn  != y_test))
     
-print("Error Rates: ",error_rate_knn)
+print("Error Rates:",error_rate_knn)
 
 round_error_rate_knn = [round(num,2) for num in error_rate_knn]
-print("Error Rate (Rounded): ", round_error_rate_knn)
+print("Error Rate: ", round_error_rate_knn)
 
 # Visualization for Error Rate
 plt.figure(figsize=(10,6))
@@ -726,5 +728,6 @@ def svm():
         formatted_report_svm = formatted_report_svm
     )
 
+# Driver Code
 if __name__ == "__main__":
     application.run(debug = True)
