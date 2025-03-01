@@ -220,7 +220,7 @@ print("\nConfusion Matrix:")
 conf_matrix_knn = confusion_matrix(y_pred_knn, test_target)
 plt.figure(figsize=(10,7))
 sns.heatmap(conf_matrix_knn, annot=True, fmt='d', cmap='Blues', xticklabels=labels, yticklabels=labels)
-confusion_matrix_img = encode_plot_to_base64()
+confusion_matrix_knn_img = encode_plot_to_base64()
 plt.close()
 
 # Building the Decision Tree Classifier
